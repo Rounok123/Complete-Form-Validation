@@ -1,0 +1,107 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* -----------------------------------navbar-------------------------------------- */
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav li{
+    list-style: none;
+    margin: 1rem 1rem;
+}
+.nav li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: .2rem;
+    border-radius: 10px;
+}
+.nav li a:hover{
+    color: turquoise;
+}
+
+/* ---------------------------------Home page------------------------------------------ */
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#heading{
+    color: white;
+    margin-top: 12rem;
+}
+
+/* ---------------------------------Login page------------------------------------------ */
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 9rem;
+}
+
+#login input{
+    margin-top: 1.2rem;
+    background: transparent;
+    outline: none;
+    color: white;
+    
+}
+
+/* ---------------------------------Signin page------------------------------------------ */
+
+#form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4.2rem;
+}
+.form-control{
+    margin-top: 1rem;
+}
+.form-control input{
+    outline: none;
+    background: transparent;
+    color: white;
+}
+.form-control small{
+    display: block;
+    color: rgb(245, 138, 138);
+    font-weight: bold;
+}
+
+
+/* --------------------------------------Utility------------------------------------ */
+
+body::before{
+    content: "";
+    background: url('../img/bg-1.jpg') no-repeat center center/cover;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.btn{
+    outline: none;
+    margin-top: 1rem;
+    padding: 0.2rem;
+    border-radius: 9px;
+    border: 1px solid black;
+    width: 3.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    color: whitesmoke;
+}
+.btn:hover{
+    color: wheat;
+}

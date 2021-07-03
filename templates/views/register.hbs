@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+</head>
+<body>
+    {{>navbar}}
+        <form action="/"  method = "POST" onsubmit="return validate()" id="form" autocomplete="off">
+            <div class="form-control">
+                <input type="text" name="names" id="username" placeholder="Name">
+                <small></small>
+            </div>
+            <div class="form-control">
+                <input type="email" name="emails" id="email" placeholder="Email"> 
+                <small></small>
+            </div>
+            <div class="form-control">
+                <input type="number" name="phones" id="number" placeholder="Phone no.">
+                <small></small>
+            </div>
+            <div class="form-control">
+                <input type="text" name="passwords" id="password" placeholder="Password">
+                <small></small>
+            </div>
+            <div class="form-control">
+                <input type="text" name="" id="conpassword" placeholder="Confirm password">
+                <small></small>
+            </div>
+            <button type="submit" class="btn">Signin</button>
+        </form>
+    <script src="../../static/js/index.js"></script>
+</body>
+</html>
