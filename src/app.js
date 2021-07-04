@@ -5,7 +5,9 @@ const hbs = require('hbs')
 const { url } = require("inspector");
 const bodyparser = require("body-parser");
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/youtube', {useNewUrlParser: true, useUnifiedTopology: true});
+const { registerPartial } = require('hbs');
+const DB = 'mongodb+srv://Rounok:rounok@12345@cluster0.yt3z5.mongodb.net/MERN?retryWrites=true&w=majority'
+mongoose.connect(DB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
 const port = 80;
 
 
@@ -33,22 +35,43 @@ hbs.registerPartials(path.join(__dirname, '../templates/partials'));
 
 
 
-app.post("/", (req, res)=>{ 
+app.get("/", (req,res)=>{
+    res.render('index')
+});
+
+app.get("/login", (req,res)=>{
+    res.render('login.hbs')
+});
+
+app.get("/register", (req,res)=>{
+    res.render('register.hbs')
+});
+
+app.post("/register", (req, res)=>{ 
     let form = new valid(req.body);
     form.save().then(()=>{
-        res.render('index.hbs');
+        res.status(201).render('index.hbs');
     }).catch(()=>{
         res.status(400).send("<h1>The data is not stored<h1>");
     })
 });
-app.get("/", (req,res)=>{
-    res.render('index')
-});
-app.get("/login", (req,res)=>{
-    res.render('login.hbs')
-});
-app.get("/register", (req,res)=>{
-    res.render('register.hbs')
+
+app.post("/login", async(req, res)=>{
+    try {
+        const emails = req.body.emails;
+        const passwords = req.body.passwords;
+
+        const useremail = await valid.findOne({emails:emails});
+        if(useremail.passwords === passwords){
+            res.status(201).render('index.hbs');
+        }
+        else{
+            res.status(400).send("Password are not matching!!");
+        }
+      
+    } catch (error) {
+        res.status(400).send("Invalid Email");
+    }
 });
 
 app.listen(port, ()=>{

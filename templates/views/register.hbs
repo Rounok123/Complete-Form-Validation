@@ -9,9 +9,9 @@
 </head>
 <body>
     {{>navbar}}
-        <form action="/"  method = "POST" onsubmit="return validate()" id="form" autocomplete="off">
+        <form action="/register"  method = "POST" onsubmit="return validate()" id="form" autocomplete="off">
             <div class="form-control">
-                <input type="text" name="names" id="username" placeholder="Name">
+                <input type="text" autocomplete="off" name="names" id="username" placeholder="Name">
                 <small></small>
             </div>
             <div class="form-control">
@@ -32,6 +32,6 @@
             </div>
             <button type="submit" class="btn">Signin</button>
         </form>
-    <script src="../../static/js/index.js"></script>
+    <script src="../../static/js/register.js"></script>
 </body>
 </html>

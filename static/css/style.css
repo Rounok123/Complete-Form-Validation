@@ -46,12 +46,22 @@
     margin-top: 9rem;
 }
 
-#login input{
+.form-control{
     margin-top: 1.2rem;
-    background: transparent;
-    outline: none;
-    color: white;
     
+}
+.form-control input{
+    outline: none;
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 2px solid magenta;
+}
+.form-control small{
+    display: block;
+    color: rgb(221, 73, 73);
+    margin-top: 2px;
+    font-weight: bold;
 }
 
 /* ---------------------------------Signin page------------------------------------------ */
@@ -60,19 +70,22 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 4.2rem;
+    margin-top: 5.2rem;
 }
 .form-control{
     margin-top: 1rem;
 }
 .form-control input{
     outline: none;
-    background: transparent;
+    background: none;
     color: white;
+    border: none;
+    border-bottom: 2px solid magenta;
 }
 .form-control small{
     display: block;
-    color: rgb(245, 138, 138);
+    color: rgb(221, 73, 73);
+    margin-top: 2px;
     font-weight: bold;
 }
 

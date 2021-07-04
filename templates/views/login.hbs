@@ -9,11 +9,17 @@
 </head>
 <body>
     {{>navbar}}
-        <form action="/"  method = "POST" id="login" autocomplete="off">
-            <input type="email" name="emails" id="email-login" placeholder="Email">
-            <input type="text" name="passwords" id="password-login" placeholder="Pasword">
+        <form action="/login"  method = "POST" id="login" onsubmit="return validate()" autocomplete="off">
+            <div class="form-control">
+                <input type="email" name="emails" id="email" placeholder="Email"> 
+                <small></small>
+            </div>
+            <div class="form-control">
+                <input type="text" name="passwords" id="password" placeholder="Password">
+                <small></small>
+            </div>
             <button type="submit" class="btn">Login</button>
         </form>
-
+    <script src="../../static/js/login.js"></script>
 </body>
 </html>
